@@ -1,0 +1,39 @@
+<%- include("partials/header"); -%>
+
+  <div class="cp" id="webdesignanddevelopment">
+    <center><br />
+      <h1><%= courseTitle%></h1>
+      <h3>Course Lectures</h3><br />
+    </center>
+    <div class="container-fluid">
+      <div class=" row justify-content-center">
+        <div class="col-lg-5 col-md-7 col-sm-10">
+          <div class=" embed-responsive embed-responsive-16by9 videou ">
+            <iframe class=" embed-responsive-item" src="<%- primary %>" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <center><br /><br />
+      <h3>Text Books</h3>
+    </center>
+    <div class="container-fluid">
+      <div class="row pdfs justify-content-center" id="pdfs">
+        <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 pdf" id="pdf1">
+          <% references.forEach((refUrl,index)=>{ %>
+          <div class="flip-box">
+            <div class="flip-box-back text-center" style="background-image: url(<%- refImg[index] %>);">
+              <div class="inner color-white">
+                <h3 class="flip-box-header"><br /></h3>
+                <p><br /></p>
+                <a href=<%- refUrl %> target="_blank"> <button class="flip-box-button">Preview</button></a>
+              </div>
+            </div>
+          </div>
+          <% })%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include("partials/footer"); -%>

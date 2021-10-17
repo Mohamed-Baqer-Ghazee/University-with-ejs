@@ -1,0 +1,44 @@
+<%- include("partials/header"); -%>
+
+<h1>Create</h1>
+<h2>Choose from the list below to edite existing courses or enter a new course</h2>
+<form class="" action="/create" method="post">
+  <div class="form-group">
+    <label>Course Title</label>
+    <select class="form-control" name="selection" onchange="console.log(window.location.href='/create/'+this.value);">
+      <option value="object_oriented_programming">Object oriented programming</option>
+      <option value="electronoic_systems">Electronoic Systems</option>
+      <option value="signals_and_systems_1">Signals And Systems 1</option>
+      <option value="microprocessor">Microprocessor</option>
+      <option value="english_ii">English 2</option>
+      <option value="em_fields">Em Fields</option>
+      <option value="web_design_and_development">Web Design And Development</option>
+      <option value="signals_and_systems_2">Signals And Systems 2</option>
+      <option value="analog_communication">Analog Communication</option>
+      <option value="programming_paradigms">Programming Paradigms</option>
+      <option value="antenna_theory">Antenna Theory</option>
+      <option value="data_analysis">Data Analysis</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Primary Course</label>
+    <input type="text" class="form-control" name="primary"></input>
+  </div>
+  <div class="form-group">
+    <label for="">Enter secondary Urls(optional)</label><br>
+    <input type="text" name="secondary[]" value="" /><br>
+    <input type="text" name="secondary[]" value="" /><br>
+    <input type="text" name="secondary[]" value="" /><br>
+    <input type="text" name="secondary[]" value="" /><br>
+  </div>
+  <div class="form-group">
+    <label for="">Enter references Urls each with it's img url (optional)</label><br>
+    <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
+    <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
+    <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
+    <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Publish</button>
+</form>
+
+<%- include("partials/footer"); -%>

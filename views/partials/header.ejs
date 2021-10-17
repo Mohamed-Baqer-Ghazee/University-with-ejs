@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" src="https://www.sitelevel.com/javabox?crid=fdt5r43e"></script> -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="theme" rel="stylesheet" type="text/css" href="light-theme.css" />
+  <link rel="stylesheet" type="text/css" href="styleh.css" />
+
+  <title>University</title>
+
+  <style media="screen">
+
+  </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="logo">
+      <a class="navbar-brand" href="#" onclick="show('carouselExampleIndicators')" style="font-family: 'Poppins', sans-serif;"><img src="icons/mainicon.png" alt="icon" id="mainicon"></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active"><a class="nav-link" href="/" onclick="show('carouselExampleIndicators')">University</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/create/main">Create</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">1st Stage</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <span>Course One</span>
+            <li><a class="dropdown-item" href="#">Computer Programming</a></li>
+            <li><a class="dropdown-item" href="#">Electrical Circuits</a></li>
+            <li><a class="dropdown-item" href="#">Engenerring Drawing</a></li>
+            <li><a class="dropdown-item" href="#">Computer Science</a></li>
+            <li><a class="dropdown-item" href="#">Digital Design</a></li>
+            <li><a class="dropdown-item" href="#">Physics</a></li>
+            <li><a class="dropdown-item" href="#">English I</a></li>
+            <li><a class="dropdown-item" href="#">Math I</a></li>
+            <span>Course Two</span>
+            <li><a class="dropdown-item" href="#">Human Rights & Democracy</a></li>
+            <li><a class="dropdown-item" href="#">Structured Programming</a></li>
+            <li><a class="dropdown-item" href="#">Digital System Design</a></li>
+            <li><a class="dropdown-item" href="#">Electronic Devices</a></li>
+            <li><a class="dropdown-item" href="#">Probability</a></li>
+            <li><a class="dropdown-item" href="#">MathII</a></li>
+            <li><a class="dropdown-item" href="#">Arabic</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">2nd Stage</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <span>Course One</span>
+            <li><a class="dropdown-item second" href="/courses/object_oriented_programming">Object Oriented Programming</a></li>
+            <li><a class="dropdown-item second" href="/courses/signals_and_systems_1">Signals and Systems I</a></li>
+            <li><a class="dropdown-item second" href="/courses/electronoic_systems">Electronoic Systems</a></li>
+            <li><a class="dropdown-item second" href="/courses/microprocessor">Microprocessor</a></li>
+            <li><a class="dropdown-item second" href="/courses/english_ii">English II</a></li>
+            <li><a class="dropdown-item second" href="/courses/em_fields">EM Fields</a></li>
+            <span>Course Two</span>
+            <li><a class="dropdown-item second" href="/courses/web_design_and_development">Web Design and Development</a></li>
+            <li><a class="dropdown-item second" href="/courses/signals_and_systems_2">Signals and Systems II</a></li>
+            <li><a class="dropdown-item second" href="/courses/analog_communication">Analoge Communication</a></li>
+            <li><a class="dropdown-item second" href="/courses/programming_paradigms">Programming Paradigms</a></li>
+            <li><a class="dropdown-item second" href="/courses/antenna_theory">Antenna Theory</a></li>
+            <li><a class="dropdown-item second" href="/courses/data_analysis">Data Analysis</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">3rd Stage</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <span>Course One</span>
+            <li><a class="dropdown-item" href="#">Computer Architecture</a></li>
+            <li><a class="dropdown-item" href="#">Digital Communication</a></li>
+            <li><a class="dropdown-item" href="#">Information Theory</a></li>
+            <li><a class="dropdown-item" href="#">Computer Networks</a></li>
+            <li><a class="dropdown-item" href="#">English III</a></li>
+            <li><a class="dropdown-item" href="#">DSP</a></li>
+            <li><a class="dropdown-item" href="#">DS</a></li>
+            <span>Course Two</span>
+            <li><a class="dropdown-item" href="#">Computer Algorithms</a></li>
+            <li><a class="dropdown-item" href="#">Technical Assignment</a></li>
+            <li><a class="dropdown-item" href="#">Error Control Coding</a></li>
+            <li><a class="dropdown-item" href="#">Network Protocols</a></li>
+            <li><a class="dropdown-item" href="#">DBD</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">4th Stage</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <span>Course One</span>
+            <li><a class="dropdown-item" href="#">Digital Image Processing</a></li>
+            <li><a class="dropdown-item" href="#">Network Managment</a></li>
+            <li><a class="dropdown-item" href="#">Wirless Mobile</a></li>
+            <li><a class="dropdown-item" href="#">English IIII</a></li>
+            <li><a class="dropdown-item" href="#">Internet</a></li>
+            <li><a class="dropdown-item" href="#">OS</a></li>
+            <span>Course Two</span>
+            <li><a class="dropdown-item" href="#">Satalite Communication</a></li>
+            <li><a class="dropdown-item" href="#">Optical Communication</a></li>
+            <li><a class="dropdown-item" href="#">Information Systems</a></li>
+            <li><a class="dropdown-item" href="#">Microwave Circuits</a></li>
+            <li><a class="dropdown-item" href="#">Wirless Netorking</a></li>
+            <li><a class="dropdown-item" href="#">Cryptography</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link lects" href="/Lectures">Lectures </a></li>
+        <li class="nav-item la"><label for="ChangeTheme" id="la">
+            <input type="checkbox" id="ChangeTheme" /> <span class="slide"></span>
+          </label>
+        </li>
+        <li class="nav-item cr"><a class="nav-link disabled" href="#">&copyGROUP B</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body>
