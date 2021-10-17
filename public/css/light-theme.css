@@ -28,7 +28,7 @@ body {
   margin: auto;
 }
 
-label {
+.generalLabel {
   display: block;
   height: 15px;
   width: 60px;

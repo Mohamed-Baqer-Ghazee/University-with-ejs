@@ -3,18 +3,18 @@
 <h1><%- deceratedTitle%></h1>
 <form class="" action="/create/<%-courseTitle%>" method="post">
   <div class="form-group">
-    <label>Primary Course</label>
+    <label class="craeteLabel">Primary Course</label>
     <input type="text" class="form-control" name="primaryUrl" value="<%-primaryUrl%>"></input>
   </div>
   <div class="form-group">
-    <label for="">Secondary Urls</label><br>
+    <label class="craeteLabel" for="">Secondary Urls</label><br>
     <input type="text" name="secondaryUrl[]" value=<%-secondaryUrl[0]%> /><br>
     <input type="text" name="secondaryUrl[]" value=<%-secondaryUrl[1]%> /><br>
     <input type="text" name="secondaryUrl[]" value=<%-secondaryUrl[2]%> /><br>
     <input type="text" name="secondaryUrl[]" value=<%-secondaryUrl[3]%> /><br>
   </div>
   <div class="form-group">
-    <label for="">References Urls each with it's img url</label><br>
+    <label class="craeteLabel" for="">References Urls each with it's img url</label><br>
     <input type="text" name="referencesUrl[]" value=<%-referencesUrl[0]%> /><input type="text" name="referencesImgs[]" value=<%-referencesImgs[0]%> /><br>
     <input type="text" name="referencesUrl[]" value=<%-referencesUrl[1]%> /><input type="text" name="referencesImgs[]" value=<%-referencesImgs[1]%> /><br>
     <input type="text" name="referencesUrl[]" value=<%-referencesUrl[2]%> /><input type="text" name="referencesImgs[]" value=<%-referencesImgs[2]%> /><br>

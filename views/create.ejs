@@ -3,7 +3,7 @@
 <h1>Create</h1>
 <h2>Choose from the list below to edit existing courses</h2>
   <div class="form-group">
-    <p>Course Name</p>
+    <label class="craeteLabel">Course Name</label>
     <select class="form-control" name="selection" onchange="console.log(window.location.href='/create/'+this.value);">
       <option value="object_oriented_programming">Object oriented programming</option>
       <option value="electronoic_systems">Electronoic Systems</option>
@@ -22,22 +22,22 @@
   <h2>Or enter a new course</h2>
   <form class="" action="/create/main" method="post">
   <div class="form-group">
-    <label>Course Name</label>
+    <label class="craeteLabel">Course Name</label>
     <input type="text" class="form-control" name="name"></input>
   </div>
   <div class="form-group">
-    <label>Primary Course</label>
+    <label class="craeteLabel">Primary Course</label>
     <input type="text" class="form-control" name="primary"></input>
   </div>
   <div class="form-group">
-    <label for="">Enter secondary Urls(optional)</label><br>
+    <label class="craeteLabel" for="">Enter secondary Urls(optional)</label><br>
     <input type="text" name="secondary[]" value="" /><br>
     <input type="text" name="secondary[]" value="" /><br>
     <input type="text" name="secondary[]" value="" /><br>
     <input type="text" name="secondary[]" value="" /><br>
   </div>
   <div class="form-group">
-    <label for="">Enter references Urls each with it's img url (optional)</label><br>
+    <label  class="craeteLabel"for="">Enter references Urls each with it's img url (optional)</label><br>
     <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
     <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
     <input type="text" name="references[]" value="" /><input type="text" name="referencesimg[]" value="" /><br>
