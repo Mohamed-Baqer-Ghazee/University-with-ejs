@@ -9,7 +9,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 
 mongoose.connect("mongodb://localhost:27017/coursesDB");
 
@@ -61,20 +61,21 @@ app.get("/create/main", function(req, res){
   res.render("create");
 });
 
+app.post("/create/main", function(req, res){
+  const input=req.body;
+    const course = new Course({
+      name: input.name,
+      primaryUrl: input.primary,
+      secondaryUrl: input.secondary,
+      referencesUrl: input.references,
+      secondaryImgs: input.secondaryimg,
+      referencesImgs: input.referencesimg
+    });
+    course.save();
+      res.render("success",{courseTitle: _.startCase(input.name)});
+});
 
-// app.post("/create", function(req, res){
-//   const input=req.body;
-//   const course=new Course({
-//   name: input.selection,
-//   primaryUrl: input.primary,
-//   secondaryUrl:input.secondary,
-//   referencesUrl:input.references,
-//   secondaryImgs:input.secondaryimg,
-//   referencesImgs: input.referencesimg
-// });
-// course.save();
-// res.redirect("/");
-// });
+
 
 app.get("/create/:customCourseName", function(req, res){
 
@@ -102,20 +103,6 @@ app.get("/create/:customCourseName", function(req, res){
 });
 
 
-// app.post("/create/:courseTitle", function(req, res){
-//   const courseTitle =(req.params.courseTitle);
-//   const input=req.body;
-//   console.log(input);
-//   const course=new Course({
-//   name: courseTitle,
-//   primaryUrl: input.primaryUrl,
-//   secondaryUrl:input.secondaryUrl,
-//   referencesUrl:input.referencesUrl,
-//   referencesImgs: input.referencesimg
-// });
-// course.save();
-// res.redirect("/");
-// });
 
 app.post("/create/:courseTitle", function(req, res){
   const courseTitle=req.params.courseTitle;
@@ -140,6 +127,33 @@ app.listen(3000, function() {
 
 
 
+// app.post("/create/:courseTitle", function(req, res){
+//   const courseTitle =(req.params.courseTitle);
+//   const input=req.body;
+//   console.log(input);
+//   const course=new Course({
+//   name: courseTitle,
+//   primaryUrl: input.primaryUrl,
+//   secondaryUrl:input.secondaryUrl,
+//   referencesUrl:input.referencesUrl,
+//   referencesImgs: input.referencesimg
+// });
+// course.save();
+// res.redirect("/");
+// });
+// app.post("/create", function(req, res){
+//   const input=req.body;
+//   const course=new Course({
+//   name: input.selection,
+//   primaryUrl: input.primary,
+//   secondaryUrl:input.secondary,
+//   referencesUrl:input.references,
+//   secondaryImgs:input.secondaryimg,
+//   referencesImgs: input.referencesimg
+// });
+// course.save();
+// res.redirect("/");
+// });
 //
 // const express = require("express");
 // const bodyParser = require("body-parser");

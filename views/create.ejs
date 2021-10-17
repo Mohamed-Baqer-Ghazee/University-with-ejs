@@ -1,8 +1,7 @@
 <%- include("partials/header"); -%>
 
 <h1>Create</h1>
-<h2>Choose from the list below to edite existing courses or enter a new course</h2>
-<form class="" action="/create" method="post">
+<h2>Choose from the list below to edit existing courses</h2>
   <div class="form-group">
     <label>Course Title</label>
     <select class="form-control" name="selection" onchange="console.log(window.location.href='/create/'+this.value);">
@@ -19,6 +18,12 @@
       <option value="antenna_theory">Antenna Theory</option>
       <option value="data_analysis">Data Analysis</option>
     </select>
+  </div>
+  <h2>Or enter a new course</h2>
+  <form class="" action="/create/main" method="post">
+  <div class="form-group">
+    <label>Primary Course</label>
+    <input type="text" class="form-control" name="name"></input>
   </div>
   <div class="form-group">
     <label>Primary Course</label>
