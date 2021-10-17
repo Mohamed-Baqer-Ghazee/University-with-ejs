@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use('/public/icons/', express.static('./public/icons'));
 
+app.locals._ = _;
 mongoose.connect("mongodb://localhost:27017/coursesDB");
 
 const courseSchema={
@@ -23,15 +24,27 @@ const courseSchema={
 }
 const Course = mongoose.model("course",courseSchema);
 
-const stageSchema ={
-  name:String,
-  courses:[courseSchema]
-}
-const Stage=mongoose.model("stage", stageSchema);
-
-
 app.get("/", function(req,res){
-  res.render("home");
+  // Course.find({}).project({name:1}).toArray(function(err, result){
+  //   console.log(result);
+  // });
+    Course.find({}, function(err, foundCourses) {if (!err){
+    if (!foundCourses){
+      //Create a new list
+      res.render("notfound", {courseTitle: "fucku"});
+    } else {
+      //Show an existing list
+      const mnames=foundCourses.map(course => course.name);
+      console.log(mnames);
+      res.render("home", {
+        names:mnames
+      });
+
+    }
+  }else{
+    console.log("err");
+  }});
+
 });
 
 app.get("/courses/:customCourseName", function(req, res){
@@ -45,10 +58,10 @@ app.get("/courses/:customCourseName", function(req, res){
         } else {
           //Show an existing list
           res.render("course", {
-            courseTitle: _.startCase(foundCourse.name),
-            primary: foundCourse.primaryUrl,
-            references:foundCourse.referencesUrl,
-            refImg:foundCourse.referencesImgs
+            name: _.startCase(foundCourse.name),
+            primaryUrl: foundCourse.primaryUrl,
+            referencesUrl:foundCourse.referencesUrl,
+            referencesImgs:foundCourse.referencesImgs
           });
         }
       }else{
@@ -107,7 +120,7 @@ app.get("/create/:customCourseName", function(req, res){
 
 app.post("/create/:courseTitle", function(req, res){
   const courseTitle=req.params.courseTitle;
-  Course.update(
+  Course.updateOne(
     {name: courseTitle},
     {$set: req.body},
     function(err){
