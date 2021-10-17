@@ -3,7 +3,7 @@
 <h1>Create</h1>
 <h2>Choose from the list below to edit existing courses</h2>
   <div class="form-group">
-    <label>Course Title</label>
+    <p>Course Name</p>
     <select class="form-control" name="selection" onchange="console.log(window.location.href='/create/'+this.value);">
       <option value="object_oriented_programming">Object oriented programming</option>
       <option value="electronoic_systems">Electronoic Systems</option>
@@ -22,7 +22,7 @@
   <h2>Or enter a new course</h2>
   <form class="" action="/create/main" method="post">
   <div class="form-group">
-    <label>Primary Course</label>
+    <label>Course Name</label>
     <input type="text" class="form-control" name="name"></input>
   </div>
   <div class="form-group">
