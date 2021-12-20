@@ -1,6 +1,6 @@
-<%- include("partials/header,{names:name}"); -%>
+<%- include("partials/header",{names:names}); -%>
 
-  <div class="cp" id="webdesignanddevelopment">
+  <div class="cp" id="<%= name %>">
     <center><br />
       <h1><%= name %></h1>
       <h3>Course Lectures</h3><br />
@@ -9,35 +9,45 @@
       <div class=" row justify-content-center">
         <div class="col-lg-5 col-md-7 col-sm-10">
           <div class=" embed-responsive embed-responsive-16by9 videou ">
-            <iframe class=" embed-responsive-item" src="<%- primaryUrl %>" title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="ytplayer" class=" embed-responsive-item " type="text/html" width="640" height="360" src="<%- primaryUrl %>" frameborder="0"></iframe>
           </div>
         </div>
       </div>
     </div>
+    <% if(secondaryUrl[0] !=='/'){%>
+    <center><br /><br />
+      <h3>Extra Lectures</h3>
+    </center>
+    <div class="container">
+    <div class="row video justify-content-center" id="vids">
+      <% secondaryUrl.forEach((secUrl,index)=>{if(secUrl !== '/'){ %>
+      <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 vid" id="vid">
+        <iframe id="ytplayer" type="text/html"  src="<%- secUrl %>" frameborder="0"></iframe>
+      </div>
+      <% }})%></div>
+
+      </div>
+    </div>
+    <%}else{%>
+      <%}%>
     <% if(referencesUrl[0] !=='/'){%>
     <center><br /><br />
       <h3>Text Books</h3>
     </center>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row pdfs justify-content-center" id="pdfs">
-        <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 pdf" id="pdf1">
           <% referencesUrl.forEach((refUrl,index)=>{if(refUrl !== '/'){ %>
-          <div class="flip-box">
-            <div class="flip-box-back text-center" style="background-image: url(<%- referencesImgs[index] %>);">
-              <div class="inner color-white">
-                <h3 class="flip-box-header"><br /></h3>
-                <p><br /></p>
-                <a href=<%- refUrl %> target="_blank"> <button class="flip-box-button">Preview</button></a>
+            <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 pdf" id="pdf1">
+              <div class="card" style="width: 18rem;">
+                <a href="<%- refUrl %>" class="btn btn-primary" target="_blank">
+                  <img src="<%- referencesImgs[index] %>" alt="source-thumbnail" class="img-thumbnail">
+                </a>
               </div>
-            </div>
           </div>
           <% }})%>
-        </div>
       </div>
     </div>
     <%}else{%>
-      <h3>Sorry, no text books available</h3>
       <%}%>
   </div>
   <%- include("partials/footer"); -%>

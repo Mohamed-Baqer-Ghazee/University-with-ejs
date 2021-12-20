@@ -7,14 +7,10 @@ html {
   box-sizing: inherit;
 }
 
-.text-center {
-  text-align: center;
-}
 
 .color-white {
   color: #fff;
 }
-
 
 @media screen and (min-width:1380px) {
   .box-container {
@@ -36,6 +32,7 @@ html {
   -webkit-transform-style: preserve-3d;
   perspective: 1000px;
   -webkit-perspective: 1000px;
+  height: 400px;
 }
 
 .flip-box-front,

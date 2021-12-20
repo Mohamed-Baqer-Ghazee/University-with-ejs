@@ -1,22 +1,14 @@
-<%- include("partials/header"); -%>
+<%- include("partials/header",{names:names}); -%>
 
 <h1>Create</h1>
 <h2>Choose from the list below to edit existing courses</h2>
   <div class="form-group">
     <label class="craeteLabel">Course Name</label>
     <select class="form-control" name="selection" onchange="console.log(window.location.href='/create/'+this.value);">
-      <option value="object_oriented_programming">Object oriented programming</option>
-      <option value="electronoic_systems">Electronoic Systems</option>
-      <option value="signals_and_systems_1">Signals And Systems 1</option>
-      <option value="microprocessor">Microprocessor</option>
-      <option value="english_ii">English 2</option>
-      <option value="em_fields">Em Fields</option>
-      <option value="web_design_and_development">Web Design And Development</option>
-      <option value="signals_and_systems_2">Signals And Systems 2</option>
-      <option value="analog_communication">Analog Communication</option>
-      <option value="programming_paradigms">Programming Paradigms</option>
-      <option value="antenna_theory">Antenna Theory</option>
-      <option value="data_analysis">Data Analysis</option>
+      <% names.map(name=>{ %>
+        <li><a class="dropdown-item second" href="/courses/<%= name %>"><%=  _.startCase(name) %></a></li>
+        <option value=<%= name %>><%=  _.startCase(name) %></option>
+      <%})%>
     </select>
   </div>
   <h2>Or enter a new course</h2>

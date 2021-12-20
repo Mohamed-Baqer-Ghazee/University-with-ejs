@@ -1,20 +1,16 @@
 body {
-  background: white;
+  background-color: #121212;
+  color: white;
   transition: 0.5s;
   overflow: auto;
 }
-
-.img-thumbnail{
-  height: 350px;
-}
-
 .videou {
-  position: relative;
-  display: block;
-  border-bottom: 5px solid transparent;
+  position: relative !important;
+  display: block !important;
+  border-bottom: 5px solid transparent !important;
 }
 .la {
-  margin-top: -10px;
+  margin-top: -10px;z
 }
 
 #ChangeTheme {
@@ -24,10 +20,6 @@ body {
 }
 
 .cr {
-  margin: auto;
-}
-
-.lects {
   margin: auto;
 }
 
@@ -44,7 +36,7 @@ span.slide {
   height: 100%;
   background: #dadada;
   border-radius: 30px;
-  vertical-align: middle;
+  margin: auto;
 }
 
 span.slide:before {
@@ -77,6 +69,28 @@ span.slide:before {
 }
 
 /* if dark-mode class is added set this background */
+body.dark-mode {
+  background: #353535;
+  color: white;
+}
+
+.dark-mode .txt p:nth-child(1) {
+  color: #000;
+  font-weight: normal;
+}
+
+.dark-mode .txt p:nth-child(2) {
+  color: grey;
+  font-weight: bold;
+}
+
+.bg-light {
+  background-color: #282828 !important;
+}
+
+#analogcommunication {
+  align-items: center;
+}
 
 tr {
   text-align: center
@@ -84,10 +98,10 @@ tr {
 
 table.customTable {
   width: 100%;
-  background-color: #3C8DAD;
+  background-color: #02475E;
   border-collapse: collapse;
   border-width: 2px;
-  border-color: #FFFF00;
+  border-color: #000000;
   border-style: solid;
   color: #000000;
   color: white;
@@ -96,13 +110,14 @@ table.customTable {
 table.customTable td,
 table.customTable th {
   border-width: 2px;
-  border-color: #FFFF00;
+  border-color: #000000;
   border-style: solid;
   padding: 5px;
 }
 
 table.customTable thead {
-  background-color: #125D98;
+  background-color: #393E46;
+  color: white;
 }
 
 .vid {
@@ -124,7 +139,6 @@ table.customTable thead {
   height: 100%;
   width: 100%;
 }
-
 .mapouter {
   text-align: right;
   height: 500px;
@@ -159,6 +173,7 @@ span {
 
 .nav-link {
   font-style: oblique;
+  color: white !important;
 }
 
 .dropdown-backdrop {
@@ -169,6 +184,13 @@ span {
   height: 50px;
 }
 
+.dropdown-item {
+  color: white;
+  background-color: #282828;
+}
+.dropdown-menu{
+  background-color: #282828;
+}
 ::-webkit-scrollbar {
   width: 15px;
 }
@@ -179,6 +201,6 @@ span {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3C8DAD;
+  background-color: #02475E;
   border-radius: 5px;
 }

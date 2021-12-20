@@ -1,4 +1,4 @@
-<%- include("partials/header"); -%>
+<%- include("partials/header",{names:names}); -%>
 
 <h1><%- deceratedTitle%></h1>
 <form class="" action="/create/<%-courseTitle%>" method="post">
@@ -21,6 +21,9 @@
     <input type="text" name="referencesUrl[]" value=<%-referencesUrl[3]%> /><input type="text" name="referencesImgs[]" value=<%-referencesImgs[3]%> /><br>
   </div>
   <button class="btn btn-primary" type="submit" name="button">Publish</button>
+</form>
+<form class="" action="/create/<%-courseTitle%>/delete" method="POST">
+  <button class="btn btn-primary" type="submit">Delete</button>
 </form>
 
 <%- include("partials/footer"); -%>
