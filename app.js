@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/public"));
 app.use('/public/icons/', express.static('./public/icons'));
 
 app.locals._ = _;
-mongoose.connect("mongodb://localhost:27017/coursesDB");
+mongoose.connect("mongodb+srv://fub_1932:temp-1932@cluster0.dtqtd.mongodb.net/myFirstDatabase?retryWrites=true&w=majorityco/ursesDB");
 
 const options = {
   bottom: '64px', // default: '32px'
