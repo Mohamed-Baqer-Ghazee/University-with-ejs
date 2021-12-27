@@ -5,15 +5,9 @@
       <h1><%= name %></h1>
       <h3>Course Lectures</h3><br />
     </center>
-    <div class="container-fluid">
-      <div class=" row justify-content-center">
-        <div class="col-lg-5 col-md-7 col-sm-10">
-          <div class=" embed-responsive embed-responsive-16by9 videou ">
-            <iframe id="ytplayer" class=" embed-responsive-item " type="text/html" width="640" height="360" src="<%- primaryUrl %>" frameborder="0"></iframe>
+          <div class=" embed-responsive embed-responsive-16by9 ">
+            <iframe class="ytvid embed-responsive-item "  src="<%- primaryUrl %>" frameborder="0"></iframe>
           </div>
-        </div>
-      </div>
-    </div>
     <% if(secondaryUrl[0] !=='/'){%>
     <center><br /><br />
       <h3>Extra Lectures</h3>

@@ -4,13 +4,17 @@ body {
   transition: 0.5s;
   overflow: auto;
 }
+.ytvid {
+  margin: 0 auto;
+  display: block;
+}
 .videou {
   position: relative !important;
   display: block !important;
   border-bottom: 5px solid transparent !important;
 }
 .la {
-  margin-top: -10px;z
+  margin-top: -10px;
 }
 
 #ChangeTheme {

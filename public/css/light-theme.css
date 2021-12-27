@@ -3,6 +3,10 @@ body {
   transition: 0.5s;
   overflow: auto;
 }
+.ytvid {
+  margin: 0 auto;
+  display: block;
+}
 
 .img-thumbnail{
   height: 350px;

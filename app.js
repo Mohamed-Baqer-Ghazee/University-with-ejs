@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const app = express();
-const darkmode = require("darkmode-js");
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -14,22 +13,6 @@ app.use('/public/icons/', express.static('./public/icons'));
 
 app.locals._ = _;
 mongoose.connect("mongodb+srv://fub_1932:temp-1932@cluster0.dtqtd.mongodb.net/myFirstDatabase?retryWrites=true&w=majorityco/ursesDB");
-
-const options = {
-  bottom: '64px', // default: '32px'
-  right: 'unset', // default: '32px'
-  left: '32px', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#000', // default: '#fff'
-  saveInCookies: true, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
-}
-const dark = new darkmode(options);
-dark.showWidget();
 
 const courseSchema = {
   stage:String,
