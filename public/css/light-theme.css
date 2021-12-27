@@ -3,8 +3,13 @@ body {
   transition: 0.5s;
   overflow: auto;
 }
+.embed-responsive{
+    height: 50%;
+    width: 50%;
+}
+
 .ytvid {
-  margin: 0 auto;
+  margin: auto;
   display: block;
 }
 
@@ -12,11 +17,6 @@ body {
   height: 350px;
 }
 
-.videou {
-  position: relative;
-  display: block;
-  border-bottom: 5px solid transparent;
-}
 .la {
   margin-top: -10px;
 }
@@ -112,8 +112,8 @@ table.customTable thead {
 .vid {
   height: 300px;
   padding: 1%;
-  margin-top: 50px;
-  border-style: none;
+  margin: 10 ;
+  display: block;
 }
 
 .pdf {

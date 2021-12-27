@@ -1,47 +1,55 @@
 <%- include("partials/header",{names:names}); -%>
 
-  <div class="cp" id="<%= name %>">
-    <center><br />
-      <h1><%= name %></h1>
-      <h3>Course Lectures</h3><br />
-    </center>
-          <div class=" embed-responsive embed-responsive-16by9 ">
-            <iframe class="ytvid embed-responsive-item "  src="<%- primaryUrl %>" frameborder="0"></iframe>
-          </div>
-    <% if(secondaryUrl[0] !=='/'){%>
-    <center><br /><br />
-      <h3>Extra Lectures</h3>
-    </center>
-    <div class="container">
-    <div class="row video justify-content-center" id="vids">
-      <% secondaryUrl.forEach((secUrl,index)=>{if(secUrl !== '/'){ %>
-      <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 vid" id="vid">
-        <iframe id="ytplayer" type="text/html"  src="<%- secUrl %>" frameborder="0"></iframe>
-      </div>
-      <% }})%></div>
+<div class="cp" id="<%= name %>">
+  <center><br />
+    <h1><%= name %></h1>
+    <h3>Course Lectures</h3><br />
+  </center>
+  <center>
+  <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-es-12 col-sm-8 col-md-8 col-lg-8 embed-responsive embed-responsive-16by9 ">
+      <iframe class="embed-responsive-item" src=<%- primaryUrl %> frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
 
+  </center>
+  <% if(secondaryUrl[0] !=='/'){%>
+  <center><br /><br />
+    <h3>Extra Lectures</h3>
+  </center>
+  <div class="container">
+    <div class="row justify-content-center">
+      <% secondaryUrl.forEach((secUrl,index)=>{if(secUrl !== '/'){ %>
+      <div class=" col-es-12 col-sm-6 col-md-4 col-lg-3 ">
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="embed-responsive-item" src=<%- secUrl %> frameborder="0"></iframe>
+        </div>
       </div>
+      <% }})%>
     </div>
-    <%}else{%>
-      <%}%>
+  </div>
+  <%}else{%>
+  <%}%>
     <% if(referencesUrl[0] !=='/'){%>
-    <center><br /><br />
-      <h3>Text Books</h3>
-    </center>
-    <div class="container">
-      <div class="row pdfs justify-content-center" id="pdfs">
-          <% referencesUrl.forEach((refUrl,index)=>{if(refUrl !== '/'){ %>
-            <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 pdf" id="pdf1">
-              <div class="card" style="width: 18rem;">
-                <a href="<%- refUrl %>" class="btn btn-primary" target="_blank">
-                  <img src="<%- referencesImgs[index] %>" alt="source-thumbnail" class="img-thumbnail">
-                </a>
-              </div>
-          </div>
-          <% }})%>
+  <center><br /><br />
+    <h3>Text Books</h3>
+  </center>
+  <div class="container-fluid">
+    <div class="row justify-content-center"">
+      <% referencesUrl.forEach((refUrl,index)=>{if(refUrl !== '/'){ %>
+      <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 pdf" id="pdf1">
+        <div class="card" style="width: 18rem;">
+          <a href="<%- refUrl %>" class="btn btn-primary" target="_blank">
+            <img src="<%- referencesImgs[index] %>" alt="source-thumbnail" class="img-thumbnail">
+          </a>
+        </div>
       </div>
+      <% }})%>
     </div>
-    <%}else{%>
-      <%}%>
+  </div>
+  <%}else{%>
+  <%}%>
   </div>
   <%- include("partials/footer"); -%>
