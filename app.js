@@ -15,7 +15,7 @@ app.locals._ = _;
 mongoose.connect("mongodb+srv://fub_1932:temp-1932@cluster0.dtqtd.mongodb.net/myFirstDatabase?retryWrites=true&w=majorityco/ursesDB");
 
 const courseSchema = {
-  stage:String,
+  stage: String,
   name: String,
   primaryUrl: String,
   secondaryUrl: [],
@@ -27,9 +27,9 @@ const Course = mongoose.model("course", courseSchema);
 
 app.get("/", function(req, res) {
   getNames();
-        res.render("home", {
-          names: names
-        });
+  res.render("home", {
+    names: names
+  });
 
 });
 
@@ -43,7 +43,7 @@ app.get("/courses/:customCourseName", function(req, res) {
       if (!foundCourse) {
         //Create a new list
         res.render("notfound", {
-          names:names,
+          names: names,
           courseTitle: _.startCase(customCourseName)
         });
       } else {
@@ -66,10 +66,10 @@ app.get("/courses/:customCourseName", function(req, res) {
 
 app.get("/create/main", function(req, res) {
 
-        res.render("create", {
-          names: names
-        });
-      getNames();
+  res.render("create", {
+    names: names
+  });
+  getNames();
 
 });
 
@@ -85,10 +85,10 @@ app.post("/create/main", function(req, res) {
   });
   course.save();
   res.render("success", {
-    names:names,
+    names: names,
     courseTitle: _.startCase(input.name)
   });
-getNames();
+  getNames();
 });
 
 
@@ -122,7 +122,7 @@ app.get("/create/:customCourseName", function(req, res) {
       console.log("err");
     }
   });
-getNames();
+  getNames();
 });
 
 app.post("/create/:courseTitle", function(req, res) {
@@ -135,7 +135,7 @@ app.post("/create/:courseTitle", function(req, res) {
     function(err) {
       if (!err) {
         res.render("success", {
-          names:names,
+          names: names,
           courseTitle: _.startCase(courseTitle)
         });
       } else {
@@ -143,43 +143,46 @@ app.post("/create/:courseTitle", function(req, res) {
       }
     }
   );
-getNames();
+  getNames();
 });
 
-app.get("/craete/:courseTitle/delete", function(req,res){
+app.get("/craete/:courseTitle/delete", function(req, res) {
   res.send("fuckkkkkkkkkkkk")
 })
 
-app.post("/create/:courseTitle/delete", function(req, res){
-  const nameToDelete= req.params.courseTitle;
+app.post("/create/:courseTitle/delete", function(req, res) {
+  const nameToDelete = req.params.courseTitle;
   console.log(nameToDelete);
 
-  Course.findOneAndDelete({name:nameToDelete}, function(err){
+  Course.findOneAndDelete({
+    name: nameToDelete
+  }, function(err) {
     if (!err) {
       console.log("Successfully deleted checked item.");
       res.redirect("/");
-    }else {
+    } else {
       console.log(err);
     }
   });
-getNames();
+  getNames();
 });
 
-app.get("/lectures/", function(req,res){
+app.get("/lectures/", function(req, res) {
   res.send("Sorry, page does not exist yet.");
 })
 
-var names=[];
-function getNames(){
+var names = [];
+
+function getNames() {
   Course.find({}, function sub(err, foundCourses) {
     if (!err) {
       if (!foundCourses) {
         res.render("notfound", {
-          names:names,
+          names: names,
           courseTitle: ""
         });
       } else {
-          names= foundCourses.map(course => course.name);
+        names = foundCourses.map(course => course.name);
       }
     } else {
       console.log("err");
@@ -187,9 +190,9 @@ function getNames(){
   });
 };
 
-let port=process.env.PORT;
-if(port==null || port==''){
-  port=3000;
+let port = process.env.PORT;
+if (port == null || port == '') {
+  port = 3000;
 }
 
 app.listen(port, function() {
