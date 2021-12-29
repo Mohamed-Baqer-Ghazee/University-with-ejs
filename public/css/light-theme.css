@@ -13,9 +13,6 @@ body {
   display: block;
 }
 
-.img-thumbnail{
-  height: 350px;
-}
 
 .la {
   margin-top: -10px;
@@ -25,10 +22,6 @@ body {
   width: 0;
   height: 0;
   opacity: 0;
-}
-
-.cr {
-  margin: auto;
 }
 
 .lects {
@@ -64,49 +57,8 @@ span.slide:before {
   box-shadow: rgba(0, 0, 0, 0.21) 0px 0px 7px 1px;
 }
 
-.txt {
-  position: relative;
-  transform: translatex(-50px);
-}
-
-.txt p:nth-child(1) {
-  color: grey;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: 0.5s;
-}
-
 #ChangeTheme:checked+span.slide:before {
   transform: translatex(40px);
-}
-
-/* if dark-mode class is added set this background */
-
-tr {
-  text-align: center
-}
-
-table.customTable {
-  width: 100%;
-  background-color: #3C8DAD;
-  border-collapse: collapse;
-  border-width: 2px;
-  border-color: #FFFF00;
-  border-style: solid;
-  color: #000000;
-  color: white;
-}
-
-table.customTable td,
-table.customTable th {
-  border-width: 2px;
-  border-color: #FFFF00;
-  border-style: solid;
-  padding: 5px;
-}
-
-table.customTable thead {
-  background-color: #125D98;
 }
 
 .vid {
@@ -124,35 +76,10 @@ table.customTable thead {
 .pdfs{
   margin-bottom: 50px;
 }
+
 .pdfphoto {
   height: 100%;
   width: 100%;
-}
-
-.mapouter {
-  text-align: right;
-  height: 500px;
-  width: 600px;
-}
-
-.mapouter {
-  text-align: right;
-  height: 500px;
-  width: 600px;
-}
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 500px;
-  width: 600px;
-}
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 500px;
-  width: 600px;
 }
 
 span {
