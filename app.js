@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -5,6 +6,7 @@ const _ = require("lodash");
 const app = express();
 app.set('view engine', 'ejs');
 
+let ligit=0;
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -23,7 +25,13 @@ const courseSchema = {
   referencesImgs: []
 };
 
+const userSchema={
+  email:String,
+  password:String
+};
+
 const Course = mongoose.model("course", courseSchema);
+const User=new mongoose.model("User",userSchema);
 
 app.get("/", function(req, res) {
   getNames();
@@ -33,7 +41,48 @@ app.get("/", function(req, res) {
 
 });
 
+app.get("/login",function(req,res){
+  res.render("login", {
+    names: names
+  });
+});
+
+app.post("/login",function(req,res){
+  if(req.body.password==process.env.PASSWORD){
+    ligit=1;
+    res.redirect("/create/main");
+  }
+  else{
+    res.render("notAllowed", {
+    names: names
+  })
+  }
+});
+
+// app.get("/register",function(req,res){
+//   res.render("register");
+// });
+//
+// app.post("/register",function(req,res){
+//   const newUser=new User({
+//     email:req.body.email,
+//     password: req.body.password
+//   });
+//   newUser.save(function(err){
+//     if(err){
+//       console.log(err);
+//     }
+//     else{
+//       res.render("create");
+//     }
+//   });
+// });
+
 app.get("/courses/:customCourseName", function(req, res) {
+  if(!ligit){
+    res.redirect("/login");
+}
+else{
   const customCourseName = (req.params.customCourseName);
 
   Course.findOne({
@@ -61,14 +110,16 @@ app.get("/courses/:customCourseName", function(req, res) {
       console.log("err");
     }
   });
-
+}
 });
 
 app.get("/create/main", function(req, res) {
-
+  if(!ligit){
+    res.redirect("/login");}
+  else{
   res.render("create", {
     names: names
-  });
+  })};
   getNames();
 
 });

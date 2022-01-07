@@ -21,9 +21,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <% secondaryUrl.forEach((secUrl,index)=>{if(secUrl !== '/'){ %>
-      <div class=" col-es-12 col-sm-6 col-md-4 col-lg-3 ">
-        <div class="embed-responsive embed-responsive-16by9 ">
+      <div class=" col-es-12 col-sm-6 col-md-4 col-lg-3 " style="margin: 0 50px;">
+        <div class="">
+          <center>
           <iframe class="embed-responsive-item" src=<%- secUrl %> frameborder="0"></iframe>
+            </center>
         </div>
       </div>
       <% }})%>
@@ -39,11 +41,13 @@
     <div class="row pdfs justify-content-center" id="pdfs">
       <% referencesUrl.forEach((refUrl,index)=>{if(refUrl !== '/'){ %>
       <div class="col-es-12 col-sm-6 col-md-4 col-lg-3 pdf" id="pdf1">
+        <center>
         <div class="card" style="width: 18rem;">
           <a href="<%- refUrl %>" class="btn btn-primary" target="_blank">
             <img src="<%- referencesImgs[index] %>" alt="source-thumbnail" class="img-thumbnail">
           </a>
         </div>
+      </center>
       </div>
       <% }})%>
     </div>
