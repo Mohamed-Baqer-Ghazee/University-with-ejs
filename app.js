@@ -79,10 +79,6 @@ app.post("/login",function(req,res){
 // });
 
 app.get("/courses/:customCourseName", function(req, res) {
-  if(!ligit){
-    res.redirect("/login");
-}
-else{
   const customCourseName = (req.params.customCourseName);
 
   Course.findOne({
@@ -110,7 +106,6 @@ else{
       console.log("err");
     }
   });
-}
 });
 
 app.get("/create/main", function(req, res) {
