@@ -140,11 +140,17 @@ app.post("/create/main", function(req, res) {
     courseTitle: _.startCase(input.name)
   });
   getNames();
+  ligit=0;
 });
 
 
 
 app.get("/create/:customCourseName", function(req, res) {
+if(!ligit)
+{
+  res.redirect('/login');
+}
+else{
 
   const customCourseName = (req.params.customCourseName);
   Course.findOne({
@@ -174,6 +180,7 @@ app.get("/create/:customCourseName", function(req, res) {
     }
   });
   getNames();
+}
 });
 
 app.post("/create/:courseTitle", function(req, res) {
@@ -195,10 +202,16 @@ app.post("/create/:courseTitle", function(req, res) {
     }
   );
   getNames();
+  ligit=0;
 });
 
 app.get("/craete/:courseTitle/delete", function(req, res) {
-  res.send("fuckkkkkkkkkkkk")
+  if(!ligit){
+    res.redirect('/login');
+  }
+  else{
+    res.send("hello")
+  }
 })
 
 app.post("/create/:courseTitle/delete", function(req, res) {
@@ -216,6 +229,7 @@ app.post("/create/:courseTitle/delete", function(req, res) {
     }
   });
   getNames();
+  ligit=0;
 });
 
 app.get("/lectures/", function(req, res) {
